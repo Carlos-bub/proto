@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Barbearia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Painel Administrativo</h1>
+        <div class="nav-buttons">
+            <a href="/" class="nav-link">Voltar ao Site</a>
+            <button onclick="logout()" class="nav-link">Sair</button>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <!-- Filtros -->
+        <div class="filters">
+            <div class="filter-group">
+                <label for="date-filter">Data</label>
+                <input type="date" id="date-filter" onchange="carregarAgendamentos()">
+            </div>
+            <div class="filter-group">
+                <label for="time-filter">Horário</label>
+                <select id="time-filter" onchange="carregarAgendamentos()">
+                    <option value="">Todos</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="status-filter">Status</label>
+                <select id="status-filter" onchange="carregarAgendamentos()">
+                    <option value="">Todos</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="confirmado">Confirmado</option>
+                    <option value="cancelado">Cancelado</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>&nbsp;</label>
+                <button onclick="limparFiltros()" class="btn-action btn-clear">Limpar Filtros</button>
+            </div>
+        </div>
+
+        <!-- Sumário -->
+        <div class="appointments-summary">
+            <h3>Resumo do Dia</h3>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <span class="summary-label">Total</span>
+                    <span class="summary-value" id="total-appointments">0</span>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-label">Pendentes</span>
+                    <span class="summary-value" id="pending-appointments">0</span>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-label">Confirmados</span>
+                    <span class="summary-value" id="confirmed-appointments">0</span>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-label">Cancelados</span>
+                    <span class="summary-value" id="canceled-appointments">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grade de Horários -->
+        <div class="time-slots-grid">
+            <div class="time-slots-header">Horários do Dia</div>
+            <div class="time-slots" id="time-slots"></div>
+        </div>
+
+        <!-- Lista de Agendamentos -->
+        <div class="appointments-list-header">
+            <h3>Lista de Agendamentos</h3>
+        </div>
+        <div class="appointments">
+            <div class="appointments-header">
+                <div>Data</div>
+                <div>Horário</div>
+                <div>Cliente</div>
+                <div>Serviço</div>
+                <div>Status</div>
+                <div>Ações</div>
+            </div>
+            <div id="appointments-list"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Barbearia Style. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>

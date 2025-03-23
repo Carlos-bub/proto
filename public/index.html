@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia - Agendamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Barbearia Style</h1>
+            <a href="/login.html" class="nav-link">Área Administrativa</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="services">
+            <h2>Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Corte de Cabelo</h3>
+                    <p>Corte profissional personalizado</p>
+                    <span class="price">R$ 45,00</span>
+                </div>
+                <div class="service-card">
+                    <h3>Barba</h3>
+                    <p>Acabamento perfeito para sua barba</p>
+                    <span class="price">R$ 35,00</span>
+                </div>
+                <div class="service-card">
+                    <h3>Corte + Barba</h3>
+                    <p>Combo completo</p>
+                    <span class="price">R$ 70,00</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="appointment">
+            <h2>Agende seu Horário</h2>
+            <form id="appointment-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" pattern="[0-9]{11}" placeholder="11999999999" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Serviço:</label>
+                    <select id="service" name="service" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="corte">Corte de Cabelo</option>
+                        <option value="barba">Barba</option>
+                        <option value="combo">Corte + Barba</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Data:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Horário:</label>
+                    <select id="time" name="time" required>
+                        <option value="">Selecione um horário</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                    </select>
+                </div>
+
+                <button type="submit">Agendar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Barbearia Style. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

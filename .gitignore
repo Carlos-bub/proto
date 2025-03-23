@@ -1,0 +1,21 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.local
+
+# Logs
+*.log
+
+# Builds/Artefatos
+dist/
+build/
+.out/
+
+# Cache
+.cache/
+
+# Editor/IDE
+.vscode/
+.idea/
